@@ -16,14 +16,14 @@ public class StrZip {
         int min = inputStr.length();
 
         // System.out.println(min);
-        for (int j = 1; j < inputStr.length()-1; j++) {
+        for (int j = 1; j <= inputStr.length(); j++) {
             System.out.println("size "+j);
             int size = j;
             int i = size;
             int count = 1;
 
             String strPattern = inputStr.substring(0, size);
-            // System.out.println("first pattern " + strPattern);
+            System.out.println("first pattern " + strPattern);
             Map<String, Boolean> triger = new HashMap<>();
             triger.put(strPattern, true);
             while (true) {
@@ -36,10 +36,10 @@ public class StrZip {
                     }
 
                     if (count > 1) {
-                        sb.append(count).append(inputStr.substring(i - 1));
+                        sb.append(count).append(inputStr.substring(i-2));
                         // System.out.println(inputStr.substring(7));
                     } else {
-                        sb.append(inputStr.substring(i - 1));
+                        sb.append(inputStr.substring(i-2));
                     }
                     break;
 
@@ -61,7 +61,7 @@ public class StrZip {
                     strPattern = inputStr.substring(i, i + size);
                     triger.put(strPattern, true);
 
-                    // System.out.println("new pattern " + strPattern);
+                    System.out.println("new pattern " + strPattern);
 
                 } else {
                     count++;
