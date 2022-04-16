@@ -14,32 +14,30 @@ public class JollyJumpers2 {
         StringBuilder sb = new StringBuilder();
 
         int N = 0;
+    
+        st = new StringTokenizer(br.readLine(), " ");
+        N = Integer.parseInt(st.nextToken());
+
+        int[] inputIntArr = new int[N];
+
+        for(int i = 0; i < inputIntArr.length; i++) {inputIntArr[i] = Integer.parseInt(st.nextToken());}
         
-        while(true) {
-
-            st = new StringTokenizer(br.readLine(), " ");
-            N = Integer.parseInt(st.nextToken());
-
-            if(N==0) {break;}
-
-            int[] inputIntArr = new int[N];
-
-            for(int i = 0; i < inputIntArr.length; i++) {inputIntArr[i] = Integer.parseInt(st.nextToken());}
-           
-            Arrays.sort(inputIntArr);
-            
-            Boolean checker = true;
-            
-            for(int i = inputIntArr.length-1; i > 0; i-- ){
-                if(inputIntArr[i] - inputIntArr[i-1] == 1) {
-                    continue;
-                }
-                checker = false;
-                break;
+        Arrays.sort(inputIntArr);
+        
+        if(inputIntArr[0]==0) {return;}
+        
+        Boolean checker = true;
+        
+        for(int i = inputIntArr.length-1; i > 0; i--) {
+            if(Math.abs(inputIntArr[i] - inputIntArr[i-1]) == 1) {
+                continue;
             }
-            
-            sb.append(checker?"JOLLY G":"AN JOLLY G").append("\n");
+            checker = false;
+            break;
         }
+        
+        sb.append(checker?"NAN JOLLY G":"AN JOLLY G").append("\n");
+    
         System.out.println(sb.toString());
     }
 }

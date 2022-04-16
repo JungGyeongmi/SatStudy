@@ -49,7 +49,5 @@ public class TargetNumber {
         }
 
         checknum = 0;
-
-
     }
 }
