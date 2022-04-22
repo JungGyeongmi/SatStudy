@@ -55,5 +55,6 @@ public class Bomb {
         secDiffTime = (afterTime - beforeTime);
         
         System.out.println("1번째 solution() 런타임 : "+secDiffTime+" ms ");
+        sc.close();
     } 
 }

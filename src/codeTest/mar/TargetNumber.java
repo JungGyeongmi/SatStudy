@@ -49,5 +49,6 @@ public class TargetNumber {
         }
 
         checknum = 0;
+        System.out.println(count);
     }
 }
